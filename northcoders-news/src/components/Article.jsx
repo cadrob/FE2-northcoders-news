@@ -11,14 +11,15 @@ import '../article.css'
 
 class Article extends Component { //comments in here also? and buttons to vote
     state = {
-        article: null
+        article: null,
+        isLoading: true
     }
     render() {
         const {article} = this.state;
+        if(this.state.isLoading) {return <p>Loading...</p>}
         return (
            
-            <div  >
-                {console.log(article)}
+            <div>
                 {article &&<ArticleInfo article={article} />}
                 <div className ="votes-comments">
                 <Comments />
@@ -36,7 +37,7 @@ class Article extends Component { //comments in here also? and buttons to vote
     componentDidMount () {  //will have to get comments also here
         api.getArticleByID(this.props.article_id)
         .then((article) => {
-            this.setState({article})
+            this.setState({article, isLoading:false})
         })
     }
 
