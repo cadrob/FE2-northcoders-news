@@ -23,3 +23,8 @@ export const getArticlesByTopic = async (topic_slug) => {
      const {data} = await axios.patch(`${baseURL}/articles/${article_id}?vote=${increment}`)
      return data.article
  }
+
+ export const getComments = async (article_id) => {
+     const {data} = await axios.get(`${baseURL}/articles/${article_id}/comments`)
+     return data.comments;
+ }

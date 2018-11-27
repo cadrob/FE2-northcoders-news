@@ -22,8 +22,8 @@ class Article extends Component { //comments in here also? and buttons to vote
             <div>
                 {article &&<ArticleInfo article={article} />}
                 <div className ="votes-comments">
-                <Comments />
-                {article && <Vote article={article}/>}
+                <Comments article={article} />
+
 
                 </div>
                

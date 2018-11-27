@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../article.css'
+import Vote from '../components/Vote'
 
 const ArticleInfo = props => {
     const {article} = props;
@@ -15,6 +16,7 @@ const ArticleInfo = props => {
             </div>
             <div className='articleDetails'>
                 <p>Written by: {article.created_by.name}</p>
+                <Vote article={article} />
                 <p>Created on: {article.created_at.split('T')[0]}</p>
             </div>
 
