@@ -1,0 +1,27 @@
+.article-content {
+    display:grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas:
+    'article-wrapper articlewrapper'
+    'comments-wrapper votes-wrapper'
+
+}
+.article-wrapper {
+  border: 2px solid black;
+  grid-area: article-wrapper;
+  padding: 5px
+
+}
+
+.comments-wrapper {
+    border: 2px solid black;
+    grid-area: comments-wrapper;
+    padding: 5px
+}
+
+.votes-wrapper {
+    border: 2px solid black;
+    grid-area: votes-wrapper;
+    padding: 5px
+}

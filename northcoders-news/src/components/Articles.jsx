@@ -4,24 +4,17 @@ import * as api from '../assets/api';
 import { Link, Router } from '@reach/router';
 import Article from '../components/Article'
 
-class Articles extends Component { //topics leads to here and then will have search bar within
-    state ={ //change api to serve list, back button would set display article back to null
-        articles: [],
-        displayArticle: null
+class Articles extends Component { 
+    state ={
+        articles: []
     }  
     render() {
         return (
             <div>
-                {//this.state.displayArticle && <Article /> //back button will need to know slug ///}
-                } 
                 <ul>
             {this.state.articles.map(article => (<li><Link to={`/articles/${article._id}`}> {article.title}</Link></li>)) 
             }
             </ul>
-
-            {/* <Router>
-                <Article path="/articles/:article_id" />
-            </Router> */}
             </div>
         );
     }

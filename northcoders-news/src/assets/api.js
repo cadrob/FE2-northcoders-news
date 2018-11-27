@@ -12,3 +12,9 @@ export const getArticlesByTopic = async (topic_slug) => {
      const {data} = await axios.get(`${baseURL}/topics`)
      return data.topics;
  }
+
+ export const getArticleByID = async(article_id) => {
+     const {data} = await axios.get(`${baseURL}/articles/${article_id}`)
+     return data.article
+     
+ }

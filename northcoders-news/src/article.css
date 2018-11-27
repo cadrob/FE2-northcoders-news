@@ -1,0 +1,50 @@
+.article {
+    font-family: sans-serif;
+    color:red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    grid-area: header;
+    font-size: 40px;
+}
+
+.comments {
+    border: 2px solid black;
+    grid-area: body;
+    padding: 10px
+
+}
+
+
+
+.articlebody {
+  border: 2px solid black;
+  grid-area: body;
+  padding: 0;
+
+}
+
+.articleDetails {
+    width: 100%;
+    border: 2px solid black;
+    grid-area: articleDetails;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.articleDetails p{
+    text-align: left;
+    
+}
+
+.avatar {
+    height:50px;
+    width:50px;
+    grid-area: avatar;
+}
+
