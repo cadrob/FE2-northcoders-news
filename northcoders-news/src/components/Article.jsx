@@ -4,7 +4,8 @@ import * as api from '../assets/api'
 import ArticleInfo from '../components/ArticleInfo';
 import Comments from '../components/Comments'
 import Vote from '../components/Vote'
-import './articlecontent.css'
+import '../article.css'
+
 
 
 
@@ -16,12 +17,15 @@ class Article extends Component { //comments in here also? and buttons to vote
         const {article} = this.state;
         return (
            
-            <div className = "article-content" >
-                
-                {article &&<ArticleInfo className ="article-wrapper" article={article} />}
-                <Comments className="comments-wrapper" />
+            <div  >
+                {console.log(article)}
+                {article &&<ArticleInfo article={article} />}
+                <div className ="votes-comments">
+                <Comments />
+                {article && <Vote article={article}/>}
 
-                <Vote className="vote-wrapper" />
+                </div>
+               
 
                 
             </div>

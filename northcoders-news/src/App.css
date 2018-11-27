@@ -15,11 +15,11 @@
   padding: 5px
 }
 
-.header {
+header {
   border:2px solid green;
   grid-area:header;
 }
-.header img {
+header img {
   height:100%;
   width:80%
 }

@@ -18,8 +18,6 @@ header {
 
 }
 
-
-
 .articlebody {
   border: 2px solid black;
   grid-area: body;
@@ -30,7 +28,6 @@ header {
 .articleDetails {
     width: 100%;
     border: 2px solid black;
-    grid-area: articleDetails;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
@@ -46,5 +43,13 @@ header {
     height:50px;
     width:50px;
     grid-area: avatar;
+}
+
+.votes-comments {
+    width: 100%;
+    border: 2px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 

@@ -18,3 +18,8 @@ export const getArticlesByTopic = async (topic_slug) => {
      return data.article
      
  }
+
+ export const voteArticle = async (article_id, increment) => {
+     const {data} = await axios.patch(`${baseURL}/articles/${article_id}?vote=${increment}`)
+     return data.article
+ }
