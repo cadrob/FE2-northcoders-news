@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as api from '../assets/api'
+import '../comments.css'
+import Vote from '../components/Vote'
 
 class Comments extends Component {
     state = {
@@ -10,8 +12,12 @@ class Comments extends Component {
     render() {
         if(this.state.isLoading) return <p>Loading...</p>
         return (
-            <div >
-                {this.state.comments.map(comment => (<div key={comment._id}><p>{comment.body}</p></div>))}
+            <div className="comments">
+                {this.state.comments.map(comment => (
+                <div className="comment-wrapper" key={comment._id}>
+                <p className="comment-text">{comment.body}</p>
+                <div className="vote-wrapper"><Vote location='comments' data={comment}  /></div>
+                </div>))}
             </div>
         );
     }
@@ -19,7 +25,6 @@ class Comments extends Component {
     componentDidMount () { //do the call here for the comments
         api.getComments(this.props.article._id)
         .then((comments) => {
-            console.log(comments)
             this.setState({comments, isLoading: false})
         })
     }

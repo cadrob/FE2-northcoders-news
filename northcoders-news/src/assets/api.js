@@ -19,9 +19,9 @@ export const getArticlesByTopic = async (topic_slug) => {
      
  }
 
- export const voteArticle = async (article_id, increment) => {
-     const {data} = await axios.patch(`${baseURL}/articles/${article_id}?vote=${increment}`)
-     return data.article
+ export const voteChange= async (id, increment, type) => {
+     const {data} = await axios.patch(`${baseURL}/${type}/${id}?vote=${increment}`)
+     return data;
  }
 
  export const getComments = async (article_id) => {

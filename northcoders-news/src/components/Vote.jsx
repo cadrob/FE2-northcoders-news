@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as api from '../assets/api'
 
-class Vote extends Component {
+class Vote extends Component {  //recieved id ,location, data
     state ={
-       article: null
+       data: null,
+       isLoading: true
     }
-  render() {  //show votes,  have vote up and vote down button
+  render() {  
+      if(this.state.isLoading) return <p>...</p>
         return (
             <div>
-                <p>VoteCount : { this.state.article && this.state.article.votes}</p>
+               <p>VoteCount : {this.state.data.votes}</p>
                 <button onClick={this.handleClick} value='up' >
                     Up
                 </button>
@@ -20,13 +22,18 @@ class Vote extends Component {
         );
     }
 
-    handleClick = (event) => {
+    handleClick = (event) => { 
+        console.log(this.state.data)
         const vote = event.target.value
-        api.voteArticle(this.state.article._id, vote)
-        .then((article) => {this.setState({article})})
+        console.log(this.props.location, vote, this.state.data._id)
+        api.voteChange(this.state.data._id, vote, this.props.location)
+        .then((data) => { 
+            console.log(data)
+            this.setState({data, isLoading:false})
+        })
     }
     componentDidMount () {
-        this.setState({article: this.props.article})
+        this.setState({data: this.props.data, isLoading: false})
     }
 
 

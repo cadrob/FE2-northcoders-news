@@ -16,7 +16,7 @@ const ArticleInfo = props => {
             </div>
             <div className='articleDetails'>
                 <p>Written by: {article.created_by.name}</p>
-                <Vote article={article} />
+                <Vote data={article} location ="articles" />
                 <p>Created on: {article.created_at.split('T')[0]}</p>
             </div>
 
