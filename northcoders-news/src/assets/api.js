@@ -20,8 +20,9 @@ export const getArticlesByTopic = async (topic_slug) => {
  }
 
  export const voteChange= async (id, increment, type) => {
+     const mod = type.slice(0,-1)
      const {data} = await axios.patch(`${baseURL}/${type}/${id}?vote=${increment}`)
-     return data;
+     return data[mod]  //change api for this
  }
 
  export const getComments = async (article_id) => {
