@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Article from './components/Article'
 import * as api from './assets/api'
 import ArticleAdder from './components/ArticleAdder'
+import CommentAdder from './components/CommentAdder'
 
 
 class App extends Component {
@@ -20,18 +21,20 @@ class App extends Component {
 
   }
   render() {
+    const {user} = this.state;
     return (
   <div className="App">
     <Header />
+    <Login setUser={this.setUser} />
     <Nav topicList={this.state.topicList} />
-    <Login setUser={this.setUser} className="login" />
   
   
   <Router className="main">
     <Home path="/"/>
-    <Articles topicList={this.state.topicList} path="/topics/:topic_slug/articles" />
+    <Articles user={user} topicList={this.state.topicList} path="/topics/:topic_slug/articles" />
     <Article path="/articles/:article_id" />
-    <ArticleAdder path="/topics/:topic_slug/articles/addarticle" />
+    <ArticleAdder user={user} path="/topics/:topic_slug/articles/addarticle" />
+    <CommentAdder user={user} path="/articles/:article_id/comments" />
  </Router>
 </div>
 

@@ -3,49 +3,56 @@
   text-align: center;
   display:grid;
   grid-template-columns: 6fr 3fr 1fr;
-  grid-template-rows: 2fr 50fr;
+  grid-template-rows: 50px 1fr;
   grid-template-areas:
-  'header nav login'
-  'main main main'
+  'header login nav '
+  'main main main';
+  background-color:white;
 }
 
 .main {
-  height:auto;
-  border: 2px solid black;
+  height:100%;
   grid-area: main;
-  padding: 5px
+}
+.main-wrapper {
+  height:100%;
 }
 
 header {
-  border:2px solid green;
   grid-area:header;
+  height:100%;
+  width:auto;
 }
-header img {
-height:5vh;
-}
+ img {
+   height:100%;
+ }
 
 .login {
-border:2px solid red;
-grid-area: login;
+  height: 100%;
+  grid-area: login;
+  color:green;
+}
+.login p { 
+  display:inline-block;
 }
 
 .nav {
-  border:2px solid skyblue;
+  height:100%;
   grid-area: nav;
   
 }
 
 
 .mainimage {
-  height:auto;
-  width:80%;
-  overflow:scroll;
+  height:70%;
+  width:90%;
 }
 
 .dropbtn {
+  height:100%;
   background-color:red;
   color: white;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   font-size: 20px;
   border: none;

@@ -9,10 +9,10 @@ class Articles extends Component {
         articles: []
     }  
     render() {
+        const title = this.props.topic_slug[0].toUpperCase()+ this.props.topic_slug.slice(1)
         return (
             <div>
-                <h1>{//what areticles page aree you on 
-                }</h1>
+                <h1>{title}</h1>
                 <ul>
             {this.state.articles.map(article => (<li><Link to={`/articles/${article._id}`}> {article.title}</Link></li>)) 
             }
@@ -20,7 +20,7 @@ class Articles extends Component {
             {console.log(this.props)}
 
             
-            <Link to = {`/topics/${this.props.topic_slug}/articles/addarticle`}><button className="addarticlebtn">Add Article</button></Link>
+            {this.props.user && <Link to = {`/topics/${this.props.topic_slug}/articles/addarticle`}><button className="addarticlebtn">Add Article</button></Link>}
             </div>
         );
     }

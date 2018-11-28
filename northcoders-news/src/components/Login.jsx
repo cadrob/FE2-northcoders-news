@@ -11,14 +11,20 @@ class Login extends Component {
     render() {
         const { setUser } = this.props;
         
-    if(this.state.loggedIn) { return <p>Logged in as {this.state.username}</p>}          
+    if(this.state.loggedIn) { return (
+        <div className="login"><p>Logged in as {this.state.username}</p>
+        <button onClick={this.handleLogout}>Logout</button>
+        </div>
+    )}          
     return (
         
              <div className="login">
                 <label>Username</label>
                 <input onChange ={this.handleChange} type="text" placeholder="enter username"></input>
                 {this.state.err && <p>User not found</p>}
-                <button onClick = {this.handleClick}>Login</button>
+                <label>Password</label>
+                <input type="password"></input>
+                <button onClick = {this.handleLogin}>Login</button>
             </div>
             
         
@@ -30,7 +36,7 @@ class Login extends Component {
         this.setState({username: event.target.value})
     }
 
-    handleClick = (event) => {
+    handleLogin = (event) => {
         
         api.getUser(this.state.username)
         .then((user) => {
@@ -39,6 +45,11 @@ class Login extends Component {
         })
         .catch(err => this.setState({err}))
 
+    }
+
+    handleLogout = (event) => {
+        this.props.setUser(null)
+        this.setState({loggedIn :false})
     }
     
 

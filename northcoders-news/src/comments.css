@@ -1,18 +1,21 @@
-.comment-wrapper {
-font-family: 'Times New Roman', Times, serif;
-display:grid;
-  grid-template-columns: 6fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-  'comment-text login votes';
-
-
-
+.comments {
+height:100%;
 }
+
 .comment-text {
-grid-area: comment-text;
+  grid-area:comment-text;
 }
 
 .vote-wrapper {
-    grid-area: votes
+    grid-area: votes;
+}
+
+.comment-wrapper {
+  font-family: 'Times New Roman', Times, serif;
+  display:grid;
+  grid-template-columns: 7fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  'comment-text votes';
+  overflow: scroll;
 }

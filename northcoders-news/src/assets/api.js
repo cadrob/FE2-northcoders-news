@@ -36,6 +36,12 @@ export const getArticlesByTopic = async (topic_slug) => {
 
  }
 
+ export const addComment = async (content, article_id) => {
+
+     const { data } = await axios.post(`${baseURL}/articles/${article_id}/comments`, content)
+     return data.comment
+ }
+
  export const getUser = async (username) => {
     const { data } = await axios.get(`${baseURL}/users/${username}`)
     return data.user[0];

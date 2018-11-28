@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as api from '../assets/api'
+import { Link } from '@reach/router'
 
 class ArticleAdder extends Component {
     state = {
@@ -9,9 +10,13 @@ class ArticleAdder extends Component {
         success: false
     }
     render() {
+        if(this.state.success) {return (<div> 
+        <h1>Congratulations! You're article was successfully posted.</h1>
+        <Link to = {`/topics/${this.props.topic_slug}/articles/`}><button className="addarticlebtn">Finish</button></Link>
+        </div>)}
         return (
             <div>
-                {this.state.success && <h1>Congratulations! You're article was successfully posted.</h1>}
+               
                 <form>
                     <label htmlFor="title">Title</label>
                     <input onChange={this.handleChange} type="text" name="title"></input>
@@ -30,9 +35,9 @@ class ArticleAdder extends Component {
         api.addArticle({
             title: this.state.title,
             body: this.state.body,
-            created_by: '5be861dc9c2b29cda137a3f8'
+            created_by: this.props.user._id
             
-        }, this.props.topic_slug).then(console.log)
+        }, this.props.topic_slug).then(this.setState({success:true}))
 
         //api post request here
 
