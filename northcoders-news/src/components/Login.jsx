@@ -12,18 +12,22 @@ class Login extends Component {
         const { setUser } = this.props;
         
     if(this.state.loggedIn) { return (
-        <div className="login"><p>Logged in as {this.state.username}</p>
+        <div className="login"><p>Logged in as: {this.state.username}</p>
         <button onClick={this.handleLogout}>Logout</button>
         </div>
     )}          
+    if(this.state.err) {
+        
+        alert('User not found')
+        this.setState({err:null})
+    } 
     return (
         
              <div className="login">
-                <label>Username</label>
-                <input onChange ={this.handleChange} type="text" placeholder="enter username"></input>
-                {this.state.err && <p>User not found</p>}
-                <label>Password</label>
-                <input type="password"></input>
+             
+                <input onChange ={this.handleChange} type="text" placeholder="Enter Username"></input>
+               
+                <input type="password" placeholder="Enter Password"></input>
                 <button onClick = {this.handleLogin}>Login</button>
             </div>
             

@@ -30,10 +30,18 @@ header {
 .login {
   height: 100%;
   grid-area: login;
-  color:green;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  
 }
 .login p { 
   display:inline-block;
+  font-style: italic;
+}
+
+.login button {
+  margin: 10px;
 }
 
 .nav {
