@@ -13,8 +13,9 @@ class Nav extends Component {
             <button className="dropbtn">Topics</button>
             <div className="dropdown-content">
             {this.props.topicList.map((topic) => <Link key={topic._id} to={`topics/${topic.slug}/articles`}>{topic.title}</Link> )
-            }  
+            }
             </div>
+            
         </div>
         );
     }

@@ -2,14 +2,15 @@
   height: 100vh;
   text-align: center;
   display:grid;
-  grid-template-columns: 6fr 1fr 1fr;
-  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 6fr 3fr 1fr;
+  grid-template-rows: 2fr 50fr;
   grid-template-areas:
   'header nav login'
   'main main main'
 }
 
 .main {
+  height:auto;
   border: 2px solid black;
   grid-area: main;
   padding: 5px
@@ -20,8 +21,7 @@ header {
   grid-area:header;
 }
 header img {
-  height:100%;
-  width:80%
+height:5vh;
 }
 
 .login {
@@ -32,26 +32,46 @@ grid-area: login;
 .nav {
   border:2px solid skyblue;
   grid-area: nav;
+  
 }
 
 
 .mainimage {
-  height:0%;
-  width:100%
+  height:auto;
+  width:80%;
+  overflow:scroll;
 }
 
 .dropbtn {
   background-color:red;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 20px;
+  width: 100%;
+  font-size: 20px;
   border: none;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+.addarticlebtn {
+  background-color:red;
+  color: white;
+  padding: 20px;
+  width: 50%;
+  font-size: 20px;
+  border: none;
+ 
+ 
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
+
+  
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -67,9 +87,10 @@ grid-area: login;
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 16px 20px;
   text-decoration: none;
   display: block;
+
 }
 
 /* Change color of dropdown links on hover */

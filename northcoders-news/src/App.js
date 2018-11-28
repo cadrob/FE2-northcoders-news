@@ -8,11 +8,15 @@ import Articles from './components/Articles'
 import Header from './components/Header'
 import Article from './components/Article'
 import * as api from './assets/api'
+import ArticleAdder from './components/ArticleAdder'
 
 
 class App extends Component {
   state = { // lets get a loading spinner going here... loading component with a spinner
-    topicList:[]
+    topicList:[],
+    user: null
+    //need the username and id in here
+
 
   }
   render() {
@@ -20,17 +24,26 @@ class App extends Component {
   <div className="App">
     <Header />
     <Nav topicList={this.state.topicList} />
-    <Login className="login" />
+    <Login setUser={this.setUser} className="login" />
   
   
   <Router className="main">
     <Home path="/"/>
-    <Articles path="/topics/:topic_slug/articles" />
+    <Articles topicList={this.state.topicList} path="/topics/:topic_slug/articles" />
     <Article path="/articles/:article_id" />
+    <ArticleAdder path="/topics/:topic_slug/articles/addarticle" />
  </Router>
 </div>
 
     );
+  }
+  
+  setUser = (user) => {
+    this.setState({user})
+
+    //lets try to log out later
+
+
   }
 
   componentDidMount() { //get the topics

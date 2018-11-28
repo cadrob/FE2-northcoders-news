@@ -29,3 +29,14 @@ export const getArticlesByTopic = async (topic_slug) => {
      const {data} = await axios.get(`${baseURL}/articles/${article_id}/comments`)
      return data.comments;
  }
+
+ export const addArticle = async (content, topic_slug) => {
+
+     const { data } = await axios.post(`${baseURL}/topics/${topic_slug}/articles`, content)
+
+ }
+
+ export const getUser = async (username) => {
+    const { data } = await axios.get(`${baseURL}/users/${username}`)
+    return data.user[0];
+ }

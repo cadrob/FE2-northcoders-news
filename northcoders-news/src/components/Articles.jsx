@@ -11,10 +11,16 @@ class Articles extends Component {
     render() {
         return (
             <div>
+                <h1>{//what areticles page aree you on 
+                }</h1>
                 <ul>
             {this.state.articles.map(article => (<li><Link to={`/articles/${article._id}`}> {article.title}</Link></li>)) 
             }
             </ul>
+            {console.log(this.props)}
+
+            
+            <Link to = {`/topics/${this.props.topic_slug}/articles/addarticle`}><button className="addarticlebtn">Add Article</button></Link>
             </div>
         );
     }
