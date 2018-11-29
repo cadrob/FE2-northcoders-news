@@ -1,9 +1,8 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 
-import BackgroundSlideShow from 'react-background-slideshow';
+
 import '../App.css';
-import image1 from '../assets/mainimage.jpg'
 import styled from 'styled-components';
 import img from '../assets/news-background.jpg';
 

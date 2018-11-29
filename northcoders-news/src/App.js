@@ -32,7 +32,7 @@ class App extends Component {
   <Router className="main">
     <Home path="/"/>
     <Articles user={user} topicList={this.state.topicList} path="/topics/:topic_slug/articles" />
-    <Article path="/articles/:article_id" />
+    <Article user ={user} path="/articles/:article_id" />
     <ArticleAdder user={user} path="/topics/:topic_slug/articles/addarticle" />
     <CommentAdder user={user} path="/articles/:article_id/comments" />
  </Router>

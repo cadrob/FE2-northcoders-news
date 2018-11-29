@@ -49,10 +49,13 @@ header {
 }
 .homelogo {
   display:block;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left:auto;
   margin-right:auto;
   width:60%;
-  height:50%;
+  height:30%;
+
   
 }
 
@@ -92,6 +95,26 @@ header {
   border: none;
  
  
+}
+
+.deletebtn {
+  background-color:red;
+  color: white;
+  padding: 5px;
+  width: 50%;
+  font-size: 20px;
+  border: none;
+ 
+}
+
+.deletebtnDisabled {
+  background-color:rgba(255, 0, 0, 0.247);
+  color: white;
+  padding: 5px;
+  width: 50%;
+  font-size: 20px;
+  border: none;
+
 }
 
 /* The container <div> - needed to position the dropdown content */

@@ -46,3 +46,8 @@ export const getArticlesByTopic = async (topic_slug) => {
     const { data } = await axios.get(`${baseURL}/users/${username}`)
     return data.user[0];
  }
+
+ export const deleteComment = async (comment_id) => {
+     const {data} = await axios.delete(`${baseURL}/comments/${comment_id}`)
+     console.log(data)
+ }

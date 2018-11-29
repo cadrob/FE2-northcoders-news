@@ -18,11 +18,11 @@ class Article extends Component { //comments in here also? and buttons to vote
         const {article} = this.state;
         if(this.state.isLoading) {return <p>Loading...</p>}
         return (
-           
+         
             <div className ="article-comments">
                 {article &&<ArticleInfo article={article} />}
                 <div className ="votes-comments">
-                <Comments article={article} />
+                <Comments user={this.props.user} article={article} />
 
 
                 </div>

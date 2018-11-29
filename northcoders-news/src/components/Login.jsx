@@ -4,7 +4,7 @@ import * as api from '../assets/api'
 
 class Login extends Component {
     state = {
-        username: "",
+        username: "jessjelly",
         loggedIn: false,
         err: null
     }
@@ -25,7 +25,7 @@ class Login extends Component {
         
              <div className="login">
              
-                <input onChange ={this.handleChange} type="text" placeholder="Enter Username"></input>
+                <input onChange ={this.handleChange} value = {this.state.username} type="text" placeholder="Enter Username"></input>
                
                 <input type="password" placeholder="Enter Password"></input>
                 <button onClick = {this.handleLogin}>Login</button>
