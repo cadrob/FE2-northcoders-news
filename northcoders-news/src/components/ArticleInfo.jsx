@@ -7,7 +7,7 @@ const ArticleInfo = props => {
     const {article} = props;
     return (
 
-        
+        <div className ="article-wrapper">
         <div className='article'>
             <header>{article.title}</header>
             <div className='articlebody'>
@@ -19,6 +19,7 @@ const ArticleInfo = props => {
                 <Vote data={article} location ="articles" />
                 <p>Created on: {article.created_at.split('T')[0]}</p>
             </div>
+        </div>
 
             
         </div>

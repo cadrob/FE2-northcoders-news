@@ -1,60 +1,83 @@
+.article-comments {
+    height:100vh;
+    display:grid;
+    grid-template-rows: 60vh 30vh 10vh;
+    grid-template-areas:
+    'article-wrapper'
+    'comments'
+    'articlebutton'
+
+}
+.article-wrapper {
+    grid-area: article-wrapper;
+    max-height:80%;
+}
+
 .article {
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:black;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: skyblue;
+    background-color: rgba(221, 176, 176, 0.527);
+    margin: 20px;
+    border-radius: 50px;
+    box-shadow:20px 20px 50px 15px grey;  
+    font-size: 20px
 
 }
 
-header {
+.article header {
     grid-area: header;
     font-size: 40px;
 }
 
 .comments {
+    max-height: 100%;
     border: 2px solid black;
-    grid-area: body;
-     padding: 10px;
-
-
+    grid-area: comments;
+    padding: 10px;
+    overflow: scroll;
 }
 
 .articlebody {
-  border: 2px solid black;
-  grid-area: body;
-  width:60%;
-
-
-
+width:80%;
+}
+.articlebutton {
+    grid: articlebutton;
+    max-height: 100%;
 }
 
 .articleDetails {
     width: 50%;
-    border: 2px solid black;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
-    
+    justify-content: space-around;  
 }
 
 .articleDetails p{
     text-align: left;
-    
 }
 
-.avatar {
-    height:50px;
-    width:50px;
-    grid-area: avatar;
-}
 
 .votes-comments {
     width: 100%;
-    border: 2px solid black;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
 }
-
+.comment-text {
+    grid-area:comment-text;
+  }
+  
+  .comment-wrapper {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display:grid;
+    grid-template-columns: 7fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'comment-text votes';
+  
+  }
+  .vote-wrapper {
+    grid-area: votes;
+  }

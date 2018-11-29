@@ -19,7 +19,7 @@ class Article extends Component { //comments in here also? and buttons to vote
         if(this.state.isLoading) {return <p>Loading...</p>}
         return (
            
-            <div>
+            <div className ="article-comments">
                 {article &&<ArticleInfo article={article} />}
                 <div className ="votes-comments">
                 <Comments article={article} />
