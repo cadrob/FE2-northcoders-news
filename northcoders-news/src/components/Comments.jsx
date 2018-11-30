@@ -5,6 +5,7 @@ import '../article.css'
 import Vote from '../components/Vote'
 import Delete from '../components/Delete'
 import { Link } from '@reach/router'
+import Loader from 'react-loader-spinner';
 
 class Comments extends Component {
     state = {
@@ -13,7 +14,12 @@ class Comments extends Component {
         deleted:false
     }
     render() {
-        if(this.state.isLoading) return <div class="loading">Loading...</div>
+        if(this.state.isLoading) return (<Loader 
+            type="ThreeDots"
+            color="red"
+            height="100"	
+            width="100"
+         />)
         return (
             <div>
             <div className="comments">

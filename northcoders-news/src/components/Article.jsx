@@ -5,6 +5,7 @@ import ArticleInfo from '../components/ArticleInfo';
 import Comments from '../components/Comments'
 import Vote from '../components/Vote'
 import '../article.css'
+import Loader from 'react-loader-spinner';
 
 
 
@@ -16,7 +17,12 @@ class Article extends Component { //comments in here also? and buttons to vote
     }
     render() {
         const {article} = this.state;
-        if(this.state.isLoading) {return <p>Loading...</p>}
+        if(this.state.isLoading) {return<Loader 
+            type="ThreeDots"
+            color="red"
+            height="100"	
+            width="100"
+         />   }
         return (
          
             <div className ="article-comments">

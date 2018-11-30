@@ -16,7 +16,7 @@ class CommentAdder extends Component {
         </div>)}
         return (
             <div>
-                <form>
+                <form className="adder">
                     <label htmlFor="body">Comment</label>
                     <textarea onChange={this.handleChange} name="body" rows="4" cols="50"></textarea>
                     <button onClick ={this.handleSubmit}>Post Comment</button>
@@ -28,9 +28,6 @@ class CommentAdder extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log('props', this.props.article_id)
-
         api.addComment({
             body: this.state.body,
             created_by: this.props.user._id

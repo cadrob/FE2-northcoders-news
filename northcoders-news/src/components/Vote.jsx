@@ -6,29 +6,34 @@ class Vote extends Component {  //recieved id ,location, data
     state ={
        data: null,
        isLoading: true,
-       prevVote: '',
+       vote: true
     }
   render() {  
-      console.log(this.state.prevVote)
       if(this.state.isLoading) return <p>...</p>
         return (
             <div>
                <p>VoteCount : {this.state.data.votes}</p>
-               {this.props.user && <div>
-                {this.state.prevVote === 'up' && <button onClick={this.handleClick} value='down'>unLike</button> }
-                {this.state.prevVote === 'down' && <button onClick={this.handleClick} value='up'>Like</button> }
-                {!this.state.prevVote && <button onClick={this.handleClick} value='up'>Like</button>}
-                {!this.state.prevVote && <button onClick={this.handleClick} value='down'>Dislike</button>}
-                </div>}
+               <div>
+                {this.state.vote  &&<button onClick={this.handleClick} value='up' >
+                    Up
+                </button>}
+                {!this.state.vote &&<button onClick={this.handleClick} value='down'>
+                    Down
+                </button>}
+            </div>
             </div>
         );
     }
 
-    handleClick = (event) => { 
-        let vote = event.target.value
-        api.voteChange(this.state.data._id, vote, this.props.location) 
-        .then((data) => { //put this in component did update
-            this.setState({data, isLoading:false, prevVote:vote === 'down'? 'down' : 'up'})
+    handleClick = (event) => {
+        let vote = '' 
+        let voteChange = event.target.value
+        if(voteChange === 'up') vote = false
+        else if(voteChange === 'down') vote =true;
+     
+        api.voteChange(this.state.data._id, voteChange, this.props.location) 
+        .then((data) => { 
+            this.setState({data, isLoading:false, vote:vote})
         })
     }
     componentDidMount () {

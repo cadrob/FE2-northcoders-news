@@ -10,6 +10,9 @@
   background-color:white;
 }
 
+.slideshow{
+  height:100%;
+}
 .main {
   height:100%;
   grid-area: main;
@@ -74,11 +77,11 @@ header {
 
 .dropbtn {
   height:100%;
-  background-color:red;
+  background-color:rgba(90, 84, 84, 0.842);
   color: white;
-  padding: 10px;
+  padding:6px;
   width: 100%;
-  font-size: 20px;
+  font-size: 40px;
   border: none;
   display:flex;
   flex-direction: column;
@@ -96,6 +99,36 @@ header {
  
  
 }
+.adder {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.adder label {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+}
+
+.adder button {
+  background-color:red;
+  color: white;
+  padding: 5px;
+  width: 10%;
+  font-size: 20px;
+  border: none;
+
+}
+
+.viewbtn {
+  background-color:rgba(255, 0, 0, 0.699);
+  color: white;
+  padding: 5px;
+  width: 50%;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+
+}
 
 .deletebtn {
   background-color:red;
@@ -104,7 +137,6 @@ header {
   width: 50%;
   font-size: 20px;
   border: none;
- 
 }
 
 .deletebtnDisabled {
