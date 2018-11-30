@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faTrash,faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Delete extends Component {
      //pass userid and comment down to delete component
@@ -11,15 +13,13 @@ class Delete extends Component {
         if(user && user._id === comment.created_by._id) {
             return (
                 <div>
-                    <button onClick={() => removeComment(this.props.comment._id)} className="deletebtn">Remove</button>
+                    <FontAwesomeIcon onClick={() => removeComment(this.props.comment._id)} icon={faTrash} color="red"/>
                 </div>
             )
         }
         
         return (
-            <div>
-                <button onClick ={() => alert('You can only remove your own comments')} className="deletebtnDisabled">Remove</button>
-            </div>
+            <div><FontAwesomeIcon onClick ={() => alert('You can only remove your own comments')} icon={faTrash} color="grey"/></div>
         );
     }
 

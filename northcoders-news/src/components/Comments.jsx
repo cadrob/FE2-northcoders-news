@@ -23,7 +23,6 @@ class Comments extends Component {
         return (
             <div>
             <div className="comments">
-            {console.log(this.props)}
                 {this.state.comments.map(comment => (
                 <div className="comment-wrapper" key={comment._id}> 
                 <p className="comment-text">{comment.body}</p>
@@ -45,11 +44,9 @@ class Comments extends Component {
     removeComment = (id) => {
         api.deleteComment(id)
         .then((data) => this.setState({loading:true, deleted:true}))
-
-        //api delete the comment then set state, loading :true
     }
 
-    componentDidMount () { //do the call here for the comments
+    componentDidMount () {
         api.getComments(this.props.article._id)
         .then((comments) => {
             this.setState({comments, isLoading: false})
