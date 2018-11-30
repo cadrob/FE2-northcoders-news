@@ -29,7 +29,7 @@ class Articles extends Component {
             {this.state.articles.map(article => ( <div key={article._id} className ="link-wrapper">
                     <div className = "articleinfo">
                     <header>{article.title}</header>
-                    <p> Votes : {article.votes}</p>
+                    <p>Likes: {article.votes}</p>
                     
                     </div>
            

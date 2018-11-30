@@ -40,13 +40,6 @@ h1 {
     align-items: center;
      
 }
-
-.articleinfo header {
-    font-family: initial;
-   font-weight: bold;
-
-}
-
 .articleinfo p {
     font-family: cursive;
 }
@@ -61,7 +54,7 @@ h1 {
 .article-comments {
     height:85vh;
     display:grid;
-    grid-template-rows: 50% 40% 10%;
+    grid-template-rows: 60% 30% 10%;
     grid-template-areas:
     'article-wrapper'
     'comments'
@@ -70,7 +63,8 @@ h1 {
 }
 .article-wrapper {
     grid-area: article-wrapper;
-    max-height:80%;
+    max-height:100%;
+    margin:20px;
 }
 
 .article {
@@ -79,19 +73,18 @@ h1 {
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(197, 196, 196, 0.705);
+    background-color: rgba(231, 231, 231, 0.705);
     border-radius:10px;
     box-shadow:20px 20px 50px 15px grey;  
     font-size: 20px;
-    max-height:100%;
+    height:90%;
     margin:20px;
+    padding:0;
     grid-area: articles;
-    overflow: scroll;
 
 }
 
 .article header {
-    grid-area: header;
     font-size: 40px;
 }
 
@@ -113,9 +106,9 @@ h1 {
 
 .articlebody {
 width:80%;
-max-height:100%;
+height:100%;
 overflow: scroll;
-margin:5px;
+margin:0px;
 }
 .articlebutton {
     grid: articlebutton;
@@ -123,16 +116,20 @@ margin:5px;
 }
 
 .articleDetails {
+    font-size: 15px;
     width: 50%;
     display:flex;
     flex-direction: row;
     justify-content: space-around;  
     height: 100%;
+    margin:0;
+    padding:0;
 }
 
 .articleDetails p{
     text-align: left;
-    max-height: 100%;
+    height:50%;
+    overflow: scroll;
 
 }
 

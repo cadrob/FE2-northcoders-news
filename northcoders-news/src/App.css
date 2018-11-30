@@ -19,7 +19,7 @@
 }
 
 
-header {
+.mainheader {
   grid-area:header;
   height:100%;
   width:auto;
