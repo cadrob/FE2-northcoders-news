@@ -34,7 +34,7 @@ class Articles extends Component {
                     </div>
            
                     <div className="article-link">
-                            <Link to={`/articles/${article._id}`}><FontAwesomeIcon icon={faEye} color="red" /></Link>
+                            <Link to={`/articles/${article._id}`}><FontAwesomeIcon icon={faEye} color="maroon" /></Link>
                     </div>
             </div>
             ))}

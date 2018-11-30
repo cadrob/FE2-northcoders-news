@@ -9,10 +9,27 @@
   'main main main';
   background-color:white;
 }
-
-.slideshow{
-  height:100%;
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Inconsolata|Open+Sans+Condensed:300|Patua+One');
+.slide-container {
+  width: 70%;
+  margin: auto;
 }
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 80vh;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
 .main {
   height:100%;
   grid-area: main;
@@ -60,19 +77,6 @@
   height:30%;
 
   
-}
-
-.scrappyfont {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size:150px;
-  color: rgb(63, 62, 62);
-  font-style: oblique;
-}
-
-
-.mainimage {
-  height:70%;
-  width:90%;
 }
 
 .dropbtn {
