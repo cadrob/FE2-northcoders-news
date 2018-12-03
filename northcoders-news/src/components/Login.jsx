@@ -8,8 +8,6 @@ class Login extends Component {
         err: null
     }
     render() {
-    const { setUser } = this.props;
-        
     if(this.state.loggedIn) { return (
         <div className="login"><p>Logged in as: {this.state.username}</p>
             <button onClick={this.handleLogout}>Logout</button>

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import * as api from '../assets/api'
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown} from '@fortawesome/free-solid-svg-icons'
 
-class Vote extends Component {  //recieved id ,location, data
-    state ={
+class Vote extends Component { 
+    state = {
        data: null,
        isLoading: true,
        vote: true

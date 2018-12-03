@@ -36,7 +36,7 @@ class ArticleAdder extends Component {
             title: this.state.title,
             body: this.state.body,
             created_by: this.props.user._id
-        }, this.props.topic_slug).then(this.setState({success:true}))
+        }, this.props.topic_slug).then((article) => this.setState({success:true}))
     }
 
     handleChange = (event) => {

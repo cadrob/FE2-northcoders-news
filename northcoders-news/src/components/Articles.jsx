@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../assets/api';
-import { Link, Router } from '@reach/router';
+import { Link } from '@reach/router';
 import '../article.css'
 import Loader from 'react-loader-spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

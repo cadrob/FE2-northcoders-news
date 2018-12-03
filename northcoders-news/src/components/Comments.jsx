@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import * as api from '../assets/api'
 import '../article.css'
 import Vote from '../components/Vote'
@@ -50,7 +49,6 @@ class Comments extends Component {
             this.setState({comments, isLoading: false})
         })
     }
-
     componentDidUpdate () {
         if(this.state.deleted){
             api.getComments(this.props.article._id)
@@ -59,10 +57,5 @@ class Comments extends Component {
             })
         }  
     }
-
- 
-
 }
-
-
 export default Comments;
