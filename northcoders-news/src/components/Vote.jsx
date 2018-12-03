@@ -22,18 +22,14 @@ class Vote extends Component {  //recieved id ,location, data
                 {!this.state.vote && 
                 <FontAwesomeIcon onClick={() => this.handleClick('down')} value ='down' icon={faThumbsDown} color="red" />
                 }
-            </div>
+                </div>
             </div>
         );
     }
-
     handleClick = (voteChange) => {
-
-        let vote = '' 
-    
+        let vote = true;
         if(voteChange === 'up') vote = false
         else if(voteChange === 'down') vote =true;
-     
         api.voteChange(this.state.data._id, voteChange, this.props.location) 
         .then((data) => { 
             this.setState({data, isLoading:false, vote:vote})
@@ -42,12 +38,5 @@ class Vote extends Component {  //recieved id ,location, data
     componentDidMount () {
         this.setState({data: this.props.data, isLoading: false})
     }
-
-
 }
-
-Vote.propTypes = {
-
-};
-
 export default Vote;

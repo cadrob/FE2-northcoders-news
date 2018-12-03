@@ -17,8 +17,6 @@ class App extends Component {
     topicList:[],
     user: null
     //need the username and id in here
-
-
   }
   render() {
     const {user} = this.state;
@@ -42,11 +40,7 @@ class App extends Component {
   }
   
   setUser = (user) => {
-    this.setState({user})
-
-    //lets try to log out later
-
-
+    this.setState({user});
   }
 
   componentDidMount() { //get the topics
@@ -54,9 +48,4 @@ class App extends Component {
       .then((topics) => this.setState({topicList: topics}))
   }
 }
-
 export default App;
-//only show delete button for comments that users can delete.
-// form on Submit
-
-//on buttons for adding deleting and voting , take to login page

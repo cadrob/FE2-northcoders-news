@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import * as api from '../assets/api';
 import { Link, Router } from '@reach/router';
-import Article from '../components/Article'
 import '../article.css'
 import Loader from 'react-loader-spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,8 +22,7 @@ class Articles extends Component {
         return (
         <div className="article-main">
             <h1>{title}</h1>
-            <div className ="article-list">
-                
+            <div className ="article-list">          
             {this.state.articles.map(article => ( <div key={article._id} className ="link-wrapper">
                     <div className = "articleinfo">
                     <header>{article.title}</header>
@@ -38,35 +35,23 @@ class Articles extends Component {
                     </div>
             </div>
             ))}
-            
-           
             </div>
             {this.props.user && <Link to = {`/topics/${this.props.topic_slug}/articles/addarticle`}><button className="addarticlebtn">Add Article</button></Link>}
             </div>
         );
     }
-
-
-
-
-
     componentDidMount () {
          api.getArticlesByTopic(this.props.topic_slug)
          .then((articles) => this.setState({articles, isLoading:false}))
     }
 
-    componentDidUpdate () { //have article nested within the articles? conditional render
+    componentDidUpdate () {
         if(!this.state.articles[0]||(this.state.articles[0].belongs_to !== this.props.topic_slug)){
             api.getArticlesByTopic(this.props.topic_slug)
             .then((articles) => this.setState({articles, isLoading:false}))
         }
-
     }
-
 }
 
-// Articles.propTypes = {
-
-// };
 
 export default Articles;

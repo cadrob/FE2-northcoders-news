@@ -1,14 +1,9 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import Login from '../components/Login'
 import { Slide } from 'react-slideshow-image'
 import image1 from '../assets/developer.jpeg'
 import image2 from '../assets/liverpoolnews.jpg'
 import image3 from '../assets/ramsay.jpg'
 import '../App.css';
-import styled from 'styled-components';
-
-
 
 const slideImages = [image1, image2, image3];
 
@@ -20,41 +15,23 @@ const slideImages = [image1, image2, image3];
     arrows: true,
     className: "slides"
   }
-  
-
 const Home = props => {
-
     return (
-       
-         <div className= "slideshow">
-                <Slide {...properties}>
-        <div className="each-slide">
-          <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
- 
+      <div className= "slideshow">
+        <Slide {...properties}>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[0]})`}}></div>
           </div>
-        </div>
-        <div className="each-slide">
-          <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[1]})`}}></div>
           </div>
-        </div>
-        <div className="each-slide">
-          <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
           </div>
-        </div>
-      </Slide> 
+          </div>
+        </Slide> 
       </div>
-             
-                          
-   
-       
-    );
+      );
 };
-
-
-// Home.propTypes = {  
-    
-// };
 
 export default Home;

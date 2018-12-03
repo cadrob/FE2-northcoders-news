@@ -29,10 +29,8 @@ class Comments extends Component {
                 <p className= "createdby">Posted by: {`${comment.created_by.name} (${comment.created_by.username})`}</p>
                 <div className="vote-wrapper"><Vote user={this.props.user} location='comments' data={comment} /></div>
                 <div className="delete-button"><Delete user={this.props.user} comment={comment} removeComment={this.removeComment} /></div>
-                </div>)
-                
-                )}
-            
+                </div>)       
+                )}   
             </div>
             <div className ="articlebutton">
             {<Link to = {`/articles/${this.props.article._id}/comments`}><button className="addarticlebtn">Add Comment</button></Link>}
@@ -59,16 +57,12 @@ class Comments extends Component {
             .then((comments) => {
                 this.setState({comments, isLoading: false, deleted:false})
             })
-        }
-        
+        }  
     }
 
  
 
 }
 
-Comments.propTypes = {
-
-};
 
 export default Comments;

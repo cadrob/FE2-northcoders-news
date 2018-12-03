@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from '@reach/router'
 import * as api from '../assets/api'
 
@@ -33,8 +32,6 @@ class CommentAdder extends Component {
             created_by: this.props.user._id
         }, this.props.article_id)
         .then(this.setState({success:true}))
-
-
     }
 
     handleChange = (event) => { 
@@ -42,9 +39,5 @@ class CommentAdder extends Component {
 
     }
 }
-
-CommentAdder.propTypes = {
-
-};
 
 export default CommentAdder;
