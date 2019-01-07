@@ -20,9 +20,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Dependencies:
 
 ```
-@fortawesome/fontawesome-svg-core: ^1.2.8
-    @fortawesome/free-solid-svg-icons: ^5.5.0
-    @fortawesome/react-fontawesome: ^0.1.3
     @reach/router: ^1.2.1
     axios: ^0.18.0
     react: ^16.6.3
@@ -33,6 +30,9 @@ Dependencies:
     react-slideshow-image: ^1.0.8
     reactjs-popup: ^1.3.1
     styled-components: ^4.1.2
+    @fortawesome/fontawesome-svg-core: ^1.2.8
+    @fortawesome/free-solid-svg-icons: ^5.5.0
+    @fortawesome/react-fontawesome: ^0.1.3
 
 
 
